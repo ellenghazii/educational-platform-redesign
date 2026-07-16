@@ -1,69 +1,328 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>پروژه بازطراحی سامانه آموزشیار</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            direction: rtl;
-        }
-        .container {
-            text-align: center;
-            padding: 40px 60px;
-            background: rgba(255,255,255,0.95);
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            max-width: 500px;
-        }
-        h1 {
-            color: #333;
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-        p {
-            color: #666;
-            font-size: 16px;
-            margin-bottom: 25px;
-            line-height: 1.8;
-        }
-        .btn {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 12px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-        }
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
-            background: #5a6fd6;
-        }
-        .note {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #999;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>داشبورد آموزشیار</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="container">
-        <h1>🎓 سامانه آموزشیار</h1>
-        <p>پروژه بازطراحی رابط کاربری (UI/UX) سامانه آموزشیار دانشگاه</p>
-        <a href="index (1).html" class="btn">ورود به سایت</a>
-        <div class="note">طراحی شده با توسط النا قاضی</div>
-    </div>
+
+<div class="app">
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-top">
+
+            <button class="toggle-btn" id="toggleBtn">
+                <i class="fa-solid fa-right-left"></i>
+            </button>
+
+            <div class="profile">
+                <div class="profile-name">نام کاربری</div>
+                <div class="avatar">P</div>
+            </div>
+
+        </div>
+
+        <nav class="menu">
+
+            <button class="menu-item active" data-page="homePage">
+                <span class="menu-text">صفحه اصلی</span>
+                <i class="fa-solid fa-house"></i>
+            </button>
+
+            <button class="menu-item disabled">
+                <span class="menu-text">مدیریت دروس</span>
+                <i class="fa-solid fa-graduation-cap"></i>
+            </button>
+
+            <button class="menu-item" data-page="paymentPage">
+                <span class="menu-text">مدیریت پرداخت‌ها</span>
+                <i class="fa-regular fa-credit-card"></i>
+            </button>
+
+            <button class="menu-item disabled">
+                <span class="menu-text">فعالیت دانشجو</span>
+                <i class="fa-regular fa-user"></i>
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <button>
+                <span class="menu-text">پشتیبانی</span>
+                <i class="fa-regular fa-circle-question"></i>
+            </button>
+
+            <button>
+                <span class="menu-text">خروج</span>
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </button>
+
+        </div>
+
+    </aside>
+
+    <main class="main">
+
+        <section id="homePage" class="page active">
+
+            <header class="home-header">
+
+                <i class="fa-regular fa-bell bell"></i>
+
+                <div class="welcome">
+                    <h1>خوش اومدی، النا!</h1>
+                    <p>کد دانشجویی : 40153487964</p>
+                </div>
+
+            </header>
+
+            <div class="search-box">
+                <input type="text" placeholder="جست‌وجو">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <h2 class="section-title">دسترسی سریع</h2>
+
+            <div class="quick-grid">
+
+                <div class="quick-card">
+                    <div class="quick-icon pink">
+                        <i class="fa-regular fa-pen-to-square"></i>
+                    </div>
+                    <h3>ثبت درخواست</h3>
+                </div>
+
+                <div class="quick-card">
+                    <div class="quick-icon yellow">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <h3>دروس ارائه شده</h3>
+                </div>
+
+                <div class="quick-card">
+                    <div class="quick-icon green">
+                        <i class="fa-regular fa-credit-card"></i>
+                    </div>
+                    <h3>پرداخت شهریه</h3>
+                </div>
+
+                <div class="quick-card">
+                    <div class="quick-icon blue">
+                        <i class="fa-regular fa-id-card"></i>
+                    </div>
+                    <h3>مشاهده کارنامه</h3>
+                </div>
+
+            </div>
+
+            <div class="home-bottom">
+
+                <div class="notice-panel">
+                    <h2>اطلاعیه‌ها</h2>
+
+                    <div class="notice-card">
+                        <ul>
+                            <li>امکان انجام امور آموزشی، واریز شهریه و پرداخت پیش از موعد، بدون محدودیت زمانی از طریق لینک زیر در سامانه آموزشیار فعال می باشد.</li>
+                            <li>راهنمای پیگیری سوالات و مشکلات دانشجویان و ارتباط با پشتیبانی سامانه آموزشیار.</li>
+                            <li>دانشجویان گرامی لطفاً جهت مطالعه فایل راهنما به لینک مربوط مراجعه نمایید.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="courses-panel">
+                    <h2>دروس انتخابی ترم جاری</h2>
+
+                    <div class="courses-card">
+
+                        <div class="course-row">
+                            <span class="badge">تخصصی</span>
+                            <strong>نام درس</strong>
+                            <span>نام استاد</span>
+                            <span><i class="fa-regular fa-calendar"></i> روز کلاس</span>
+                            <span><i class="fa-regular fa-clock"></i> 12:40 - 16</span>
+                        </div>
+
+                        <div class="course-row">
+                            <span class="badge">تخصصی</span>
+                            <strong>نام درس</strong>
+                            <span>نام استاد</span>
+                            <span><i class="fa-regular fa-calendar"></i> روز کلاس</span>
+                            <span><i class="fa-regular fa-clock"></i> 12:40 - 16</span>
+                        </div>
+
+                        <div class="course-row">
+                            <span class="badge">تخصصی</span>
+                            <strong>نام درس</strong>
+                            <span>نام استاد</span>
+                            <span><i class="fa-regular fa-calendar"></i> روز کلاس</span>
+                            <span><i class="fa-regular fa-clock"></i> 12:40 - 16</span>
+                        </div>
+
+                        <div class="course-row">
+                            <span class="badge">تخصصی</span>
+                            <strong>نام درس</strong>
+                            <span>نام استاد</span>
+                            <span><i class="fa-regular fa-calendar"></i> روز کلاس</span>
+                            <span><i class="fa-regular fa-clock"></i> 12:40 - 16</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="paymentPage" class="page">
+
+            <header class="payment-header">
+
+                <i class="fa-regular fa-bell bell"></i>
+
+                <h1>مدیریت پرداخت‌ها</h1>
+
+            </header>
+
+            <div class="payment-top">
+
+                <div class="safe-card">
+                    <h3>امنیت پرداخت تضمین شده</h3>
+
+                    <p>
+                        تمامی تراکنش‌های مالی در بستر امن و با استفاده از درگاه‌های رسمی بانک مرکزی انجام می‌شود.
+                    </p>
+
+                    <button class="outline-btn">اطلاعات بیشتر</button>
+                </div>
+
+                <div class="finance-card">
+
+                    <div class="finance-stats">
+
+                        <div>
+                            <h4>مبلغ کل شهریه (ریال):</h4>
+                            <span>385,318,800</span>
+                        </div>
+
+                        <div>
+                            <h4>مبلغ پرداخت شده (ریال):</h4>
+                            <span>380,027,100</span>
+                        </div>
+
+                        <div>
+                            <h4>وضعیت تراز مالی (ریال):</h4>
+                            <span class="debt">5,291,700 (بدهکار)</span>
+                        </div>
+
+                    </div>
+
+                    <div class="finance-actions">
+                        <button class="outline-btn">دریافت گواهی مالی</button>
+                        <button class="primary-btn">پرداخت آنلاین بدهی</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="payment-bottom">
+
+                <div class="notice-panel payment-notice">
+                    <h2>اطلاعیه‌ها</h2>
+
+                    <div class="notice-card">
+                        <ul>
+                            <li>امکان انجام امور آموزشی، واریز شهریه و پرداخت پیش از موعد، بدون محدودیت زمانی از طریق لینک زیر در سامانه آموزشیار فعال می باشد.</li>
+                            <li>راهنمای پیگیری سوالات و مشکلات دانشجویان و ارتباط با پشتیبانی سامانه آموزشیار.</li>
+                            <li>دانشجویان گرامی لطفاً جهت مطالعه فایل راهنما به لینک مربوط مراجعه نمایید.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="history-panel">
+
+                    <div class="tabs">
+                        <button class="tab active">تاریخچه تراکنش‌ها</button>
+                        <button class="tab">وضعیت بدهی‌ها</button>
+                    </div>
+
+                    <h2>تاریخچه پرداخت‌ها</h2>
+
+                    <div class="history-card">
+
+                        <div class="history-item">
+                            <span class="circle"></span>
+                            <strong>نیمسال دوم تحصیلی 1404-1403</strong>
+                            <span>95,181,800</span>
+                        </div>
+
+                        <div class="history-item">
+                            <span class="circle"></span>
+                            <strong>نیمسال سوم تحصیلی 1404-1403</strong>
+                            <span>31,038,800</span>
+                        </div>
+
+                        <div class="history-item">
+                            <span class="circle"></span>
+                            <strong>نیمسال اول تحصیلی 1404-1403</strong>
+                            <span>95,181,800</span>
+                        </div>
+
+                        <div class="history-item">
+                            <span class="circle"></span>
+                            <strong>نیمسال دوم تحصیلی 1404-1403</strong>
+                            <span>95,181,800</span>
+                        </div>
+
+                        <button class="more-btn">جزئیات بیشتر</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</div>
+<div class="mobile-nav">
+
+    <button class="active" data-page="homePage">
+        <i class="fa-solid fa-house"></i>
+        <span>خانه</span>
+    </button>
+
+    <button>
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span>دروس</span>
+    </button>
+
+    <button data-page="paymentPage">
+        <i class="fa-regular fa-credit-card"></i>
+        <span>پرداخت</span>
+    </button>
+
+    <button>
+        <i class="fa-regular fa-user"></i>
+        <span>فعالیت</span>
+    </button>
+
+</div>
+<script src="app.js"></script>
 </body>
 </html>
